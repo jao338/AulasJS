@@ -1,9 +1,20 @@
-let lista1 = ['x1', 'x2', 'x3'];
+let pc = [
+    'processador',
+    'placa-mae',
+    'memoria ram',
+    'placa de video',
+    'fonte',
+    'coooler'
+]
 
-let lista2 = ['x2', ['x1', 'x2']];
+pc.pop();
+pc.shift();
+pc.push('processador')
+pc.push('placa de rede')
 
-let lista3 = ['x3', lista2[1]];
+console.log('O total de componentes: ' + pc.length)
+console.log(pc[pc.length-1])
 
-console.log(lista1[0]);
-console.log(lista2[1][0]);
-console.log(lista3[1][0]);
+// Pop - Remove o último item do array
+// Shift - Remove o primeiro item do array
+// Adiciona mais um item ao array em sua última posição
