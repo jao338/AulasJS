@@ -1,33 +1,18 @@
 let fruits = ['Maça', 'Uva', 'Laranja', 'Banana']
 
-let cars = [
-    { brand: 'Fiat', year: 2022},
-    { brand: 'Bmw', year: 2018},
-    { brand: 'Ferrari', year: 2020}
-]
+let newFruits = fruits.filter((item) => {
 
-cars.sort((a,b) => {
-
-    if(a.year > b.year){
-
-        return 1;
-
-    } else if(a.year < b.year){
-
-        return -1;
-
+    if(item.length > 4){
+        return true;
     } else{
-
-        return 0;
-
+        return false;
     }
 })
 
-cars.sort((a,b) => {
-    return a.year - b.year;
+let bigFruits = fruits.filter((item) => {
+
+    return item.length > 4;
 })
 
-fruits.sort();
-fruits.reverse();
-
-console.log(fruits)
+console.log(bigFruits)
+console.log(newFruits)
