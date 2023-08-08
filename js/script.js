@@ -1,6 +1,33 @@
-let numero = 0;
+let fruits = ['Maça', 'Uva', 'Laranja', 'Banana']
 
-while(numero < 10){
-    console.log('O número é ' + numero);
-    numero++;
-}
+let cars = [
+    { brand: 'Fiat', year: 2022},
+    { brand: 'Bmw', year: 2018},
+    { brand: 'Ferrari', year: 2020}
+]
+
+cars.sort((a,b) => {
+
+    if(a.year > b.year){
+
+        return 1;
+
+    } else if(a.year < b.year){
+
+        return -1;
+
+    } else{
+
+        return 0;
+
+    }
+})
+
+cars.sort((a,b) => {
+    return a.year - b.year;
+})
+
+fruits.sort();
+fruits.reverse();
+
+console.log(fruits)
