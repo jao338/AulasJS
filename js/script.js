@@ -1,13 +1,9 @@
-/*function square(x){
-    return x * x;
-}*/
+let lista1 = ['x1', 'x2', 'x3'];
 
-function sumSquare(a,b){
-    
-    const square = (x) => x * x;
+let lista2 = ['x2', ['x1', 'x2']];
 
-    return square(a) + square(b);
-}
+let lista3 = ['x3', lista2[1]];
 
-//console.log('O quadrado é ' + square(2));
-console.log('A soma dos quadrados é ' + sumSquare(3,5));
+console.log(lista1[0]);
+console.log(lista2[1][0]);
+console.log(lista3[1][0]);
