@@ -1,18 +1,9 @@
-let fruits = ['Maça', 'Uva', 'Laranja', 'Banana']
+let x1 = document.querySelector('.btn')
 
-let newFruits = fruits.filter((item) => {
+let x2 = document.querySelectorAll('#teste ul li')
 
-    if(item.length > 4){
-        return true;
-    } else{
-        return false;
-    }
-})
+let x3 = document.getElementsByClassName('.btn')
 
-let bigFruits = fruits.filter((item) => {
+let x4 = document.getElementById('#teste')
 
-    return item.length > 4;
-})
-
-console.log(bigFruits)
-console.log(newFruits)
+let x5 = document.getElementsByTagName('h1')
