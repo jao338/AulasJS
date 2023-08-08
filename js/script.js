@@ -1,36 +1,13 @@
-function somar(n1, n2){
-
-    let res = n1 + n2;
-
-    return res;
+function somar(x, y){
+    return x + y;
 }
 
-function nomeCompleto(nome, sobrenome){
-    
-    return (nome + ' ' + sobrenome);
+const subtrair = (x,y) => {
+    return x - y;
 }
 
-function idade(idade){
+const multiplicar = (x,y) => x * y;
 
-    if(idade >= 18){
-    
-        return true;
-    
-    }else {
-    
-        return false;
-    
-    }
-}
-
-let verificacao = idade(12);
-
-if(verificacao){
-    console.log('Você é maior de idade');
-}else{
-    console.log('Você é menor de idade');
-}
-
-console.log('O nome completo é ' + nomeCompleto('João', 'Henrique'));
-console.log('O resultado é ' + somar(10,14));
-
+console.log('A soma é feita usando a forma de declaração padrão. O resultado é igual a ' + somar(3,2));
+console.log('A subtração é feita usando uma das formas de declaração arrow function. O resultado é igual a ' + subtrair(3,2));
+console.log('A multiplicação é feita usando uma das formas de declaração arrow function. O resultado é igual a ' + multiplicar(3,2));
