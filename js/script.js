@@ -1,19 +1,27 @@
 function clique(){
-    const teste = document.querySelector('#teste')
-    const ul = teste.querySelector('ul')
-
-    let newButton = document.createElement('button')
-    newButton.innerHTML = "Botão"
-
-    let newUL = document.createElement('ul')
     
-    for (let index = 0; index < 5; index++) {
+    const input = document.querySelector('input')
 
-        let newLi = document.createElement('li')
-        newLi.innerHTML = "Item " + (index + 1)
-        newUL.append(newLi)
+    console.log(input.getAttribute('type'))
+
+    if(input.hasAttribute('placeholder')){
+        console.log('Tem placeholder')
+    } else{
+        console.log('Não tem placeholder')
     }
 
-    ul.after(newUL)
+    input.setAttribute('placeholder', 'Digite alguma coisa')
+}
 
+function mostrarSenha(){
+    const input = document.querySelector('input')
+    const botao = document.querySelector('.botao')
+
+    if(input.getAttribute('type') === ('text')){
+        input.setAttribute('type', 'password');
+        botao.innerText = "Mostrar senha"
+    } else{
+        input.setAttribute('type', 'text')
+        botao.innerText = "Ocultar senha"
+    }
 }
