@@ -1,11 +1,13 @@
-let count = 0;
+/*function square(x){
+    return x * x;
+}*/
 
-function add(){
-    //let count = 0;
-    count++;
+function sumSquare(a,b){
+    
+    const square = (x) => x * x;
+
+    return square(a) + square(b);
 }
 
-add();
-add();
-
-console.log(count);
+//console.log('O quadrado é ' + square(2));
+console.log('A soma dos quadrados é ' + sumSquare(3,5));
