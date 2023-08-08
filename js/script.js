@@ -1,18 +1,10 @@
-let x1 = document.querySelector('.btn')
+function clicou(){
+    const teste = document.querySelector('#teste')
+    const ul = teste.querySelector('ul')
+    
+    ul.innerHTML += "<li>Item alterado</li>"
+    ul.children[0].innerHTML = "Item alterado"
 
-let x2 = document.querySelectorAll('#teste ul li')
-
-let x3 = document.getElementsByClassName('.btn')
-
-let x4 = document.getElementById('teste')
-
-let x5 = document.getElementsByTagName('h1')
-
-let x6 = document.getElementById('btn')
-
-function clique(){
-    alert("Clicou no botão")
+    console.log(ul)
+    console.log(teste.children[0].children)
 }
-
-x6.addEventListener('click', clique)
-
