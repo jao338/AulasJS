@@ -1,32 +1,25 @@
-let nomes = ['0', '1', '2']
+let cores = ['preto', 'branco', 'azul'];
 
-let personagem = {
-    nome: ["Pedrinho", "Matador"],
-    idade: 16,
-    pais: 'Brasil',
-    estado: 'São Paulo',
-    cidade: 'Rio Claro',
+for(let x = 1; x < 11; x++){
 
-    nacionalidade: function (){
-        return `${this.pais} - ${this.estado}/${this.cidade}`
-    },
+    for (let index = 1; index < 11; index++) {
 
-    carros: [
-        {modelo: 'Fiat', cor: 'Preto'},
-        {modelo: 'Ferrari', cor: 'Vermelho'}
-    ],
-    atributos: {
-        forca: 15,
-        magia: 5,
-        stamina: 20,
+        console.log(x + ' * ' + index + ' = ' +  (index * x));
+
     }
+    
+    console.log('\n');
 }
 
-personagem.idade = 64
-personagem.atributos.magia += 5;
+for(let n = 0; n < cores.length; n++){
 
-console.log(nomes[0]);
-console.log(personagem.nome);
-console.log(personagem.atributos.magia);
-console.log(personagem.carros[0].cor);
-console.log(personagem.nacionalidade());
+    console.log(cores[n]);
+}
+
+for(let i in cores){
+    console.log(cores[i]);
+}
+
+for(let cor of cores){
+    console.log(cor);
+}
