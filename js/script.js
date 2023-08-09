@@ -1,31 +1,30 @@
 class Person{
 
-    constructor (name){
+    constructor (primeiroNome, ultimoNome){
 
-        this.name = name;
-    }
-    
-    height = 0;
-    steps = 0;
-    age = 0;
-
-    takeAStep(){
-        this.steps++;
+        this.primeiroNome = primeiroNome;
+        this.ultimoNome = ultimoNome;
     }
 
-    setAge(newAge){
-        if(typeof newAge == 'number'){
-            this.age = newAge;
-        }
+    _age = 0;
+
+    get nomeCompleto(){
+        return `${this.primeiroNome} ${this.ultimoNome}`
+    }
+
+    get age(){
+        return this._age;
+    }
+
+    set age(age){
+        this._age = age;
     }
 }
 
-let person1 = new Person("João")
-let person2 = new Person("Maria")
-let person3 = new Person("Xerox")
+let person1 = new Person("João", "Henrique")
+let person2 = new Person("Maria", "Rosa")
+let person3 = new Person("Luciano", "Pamplona")
 
-person1.takeAStep();
-person1.setAge(22);
+person1.age = 22
 
 console.log(`${person1.name} tem ${person1.age} anos.`)
-console.log(`Passos de ${person1.name}: ${person1.steps}`)
