@@ -1,30 +1,37 @@
 class Person{
 
-    constructor (primeiroNome, ultimoNome){
+    age = 0
 
-        this.primeiroNome = primeiroNome;
-        this.ultimoNome = ultimoNome;
+    constructor (name){
+
+        this.name = name;
     }
 
-    _age = 0;
-
-    get nomeCompleto(){
-        return `${this.primeiroNome} ${this.ultimoNome}`
-    }
-
-    get age(){
-        return this._age;
-    }
-
-    set age(age){
-        this._age = age;
+    sayHi(){
+        console.log(this.name + " Diz oi")
     }
 }
 
-let person1 = new Person("João", "Henrique")
-let person2 = new Person("Maria", "Rosa")
-let person3 = new Person("Luciano", "Pamplona")
+class Student extends Person{
 
-person1.age = 22
+    constructor (name, id){
+        super(name)
+        this.id = id;
+    }
 
-console.log(`${person1.name} tem ${person1.age} anos.`)
+    sayHello(){
+        super.sayHi();
+    }
+}
+
+let p1 = new Student("João", 1)
+
+p1.age = 22;
+
+console.log(`${p1.name} tem ${p1.age} anos e possui matrícula #${p1.id}`)
+p1.sayHello();
+
+/*
+
+    "super(name)" executa o construtor da classe "Person"
+*/
