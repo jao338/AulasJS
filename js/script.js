@@ -1,37 +1,24 @@
 class Person{
 
-    age = 0
+    age = 0;
+    static hands = 2;
 
-    constructor (name){
-
+    constructor(name){
         this.name = name;
     }
 
     sayHi(){
-        console.log(this.name + " Diz oi")
+        console.log('Oi, eu sou o ' + this.name + " e tenho " + Person.hands + " mãos")
     }
 }
 
-class Student extends Person{
+let p1 = new Person('João')
 
-    constructor (name, id){
-        super(name)
-        this.id = id;
-    }
-
-    sayHello(){
-        super.sayHi();
-    }
-}
-
-let p1 = new Student("João", 1)
-
-p1.age = 22;
-
-console.log(`${p1.name} tem ${p1.age} anos e possui matrícula #${p1.id}`)
-p1.sayHello();
+p1.sayHi();
+Person.hands = 3;
 
 /*
-
-    "super(name)" executa o construtor da classe "Person"
+    O método "static" faz referência a classe "Person" e não ao objeto instanciado, ou seja.
+    Para referenciar quantas mãos uma pessoa tem, usamos o "Person.hands"
+    Para alterar um atributo estático de uma clase, usamos "Person.hands = "
 */
