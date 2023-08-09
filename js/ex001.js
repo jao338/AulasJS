@@ -1,49 +1,31 @@
 const input = document.querySelector('input')
 const ul = document.querySelector('ul')
 
-let str = "";
-
 function adicionar(event){
 
-    if(event.key != 'Enter'){
-    
-        if(event.key == 'CapsLock' || event.key == 'Backspace'){
+    if(event.key === 'Enter'){
 
-            switch (event.key) {
-                case 'Backspace':
-            
-                    str = str.slice(0, -1)
+        
+        const li = document.createElement('li')
 
-                    break;
-            
-                case 'CapsLock':
-                    break;
-            }
+        li.innerHTML = input.value
 
-        }else{
+        ul.appendChild(li)
 
-            str += event.key; 
-
-        }
-
-     } else{
-
-        if(str == ""){
-
-        }else{
-
-            let li = document.createElement('li')
-
-            li.innerText = str
-
-            ul.append(li)
-
-            input.value = "";
-            str = "";
-        }
+        input.value = ""
     }
-
-    console.log(str)
 }
 
 input.addEventListener('keyup', adicionar)
+
+
+/*
+
+    Uma outra solução pode ser a seguinte:
+    
+        ul.innerHTML += '<li>' + input.value + '</li>'
+    
+    Ao resolver desta maneira, o resultado será o mesmo, porém não será a melhor resolução em termos de desempenho.
+    Ao fazer desta maneira, toda a lista é "apagada" e posteriormente toda a lista recriada com o novo valor. Em uma lista com 100000 linhas, encontramos um problema de desempenho
+
+*/
