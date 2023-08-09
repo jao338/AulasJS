@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>AulasJS</title>
 </head>
 <body>
-    <h1>Olá, mundo!</h1>
+
+    <div class="fightarea">
     
+        <div id="char">
+            <div class="lifebar">
+                <div class="bar" style="width: 10%;"></div>
+            </div>
+
+            <strong class="name">--</strong>
+
+            <div>
+                <button class="attackButton">Atacar</button>
+            </div>
+        </div>
+
+        <div id="monster">
+            
+            <div class="lifebar">
+                <div class="bar" style="width: 10%;"></div>
+            </div>
+
+            <strong class="name">--</strong>
+
+            <div>
+                <button class="attackButton">Atacar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <ul class="log">
+
+    </ul>
     <script src="js/script.js"></script>
 </body>
 </html>
