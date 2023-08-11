@@ -8,38 +8,43 @@
 </head>
 <body>
 
-    <div class="fightarea">
+    <div class="main">
+
+        <div class="fightarea">
     
-        <div id="char">
-            <div class="lifebar">
-                <div class="bar" style="width: 10%;"></div>
+            <div id="char">
+                <div class="lifebar">
+                    <div class="bar" style="width: 10%;"></div>
+                </div>
+    
+                <strong class="name">--</strong>
+    
+                <div>
+                    <button class="attackButton">Atacar</button>
+                </div>
             </div>
-
-            <strong class="name">--</strong>
-
-            <div>
-                <button class="attackButton">Atacar</button>
+    
+            <div id="monster">
+    
+                <div class="lifebar">
+                    <div class="bar" style="width: 10%;"></div>
+                </div>
+    
+                <strong class="name">--</strong>
+    
+                <div>
+                    <button class="attackButton">Atacar</button>
+                </div>
+    
             </div>
-        </div>
-
-        <div id="monster">
-
-            <div class="lifebar">
-                <div class="bar" style="width: 10%;"></div>
-            </div>
-
-            <strong class="name">--</strong>
-
-            <div>
-                <button class="attackButton">Atacar</button>
-            </div>
-
         </div>
     </div>
-
-    <ul class="log">
-
-    </ul>
+    
+    <div class="div-log">
+        <ul class="log">
+    
+        </ul>
+    </div>
     <script src="js/classes.js"></script>
     <script src="js/script.js"></script>
 </body>

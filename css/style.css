@@ -3,8 +3,26 @@
     padding: 0;
 }
 
-.fightarea{
+.main{
+    width: 100vw;
     display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div-log{
+    display: flex;
+    justify-content: center;
+}
+
+.log{
+    width: 80vw;
+}
+
+.fightarea{
+    padding-top: 64px;
+    display: flex;
+    width: 80vw;
     gap: 20px;
 }
 
@@ -15,6 +33,7 @@
 .lifebar{
     height: 10px;
     border: 1px solid #333;
+    margin-bottom: 16px;
 }
 
 .lifebar .bar{
@@ -27,4 +46,9 @@
     border: 1px dotted #999;
     height: 200px;
     overflow-y: scroll;
+}
+
+.attackButton{
+    margin-top: 16px;
+    margin-bottom: 16px;
 }

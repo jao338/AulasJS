@@ -103,7 +103,7 @@ class Stage{
         if(actualAttack > actualDefense){
             
             attacked.life -= (actualAttack - actualDefense);
-            this.log.addMessage(`${attacking.name} causou ${actualAttack} em ${attacked.name}`)
+            this.log.addMessage(`${attacking.name} causou ${actualAttack} de dano em ${attacked.name}`)
 
         }else{
 
@@ -132,8 +132,8 @@ class Log{
 
         this.listaE.innerHTML = '';
 
-        for(i in this.list){
-            this.listaE.innerHTML += `<li>/${this.list[i]}</li>`;
+        for(let i in this.list){
+            this.listaE.innerHTML += `<li>${this.list[i]}</li>`;
         }
     }
 }
