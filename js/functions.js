@@ -53,3 +53,41 @@ const createBigMonster = () =>{
         defense: 10
     }
 }
+
+const stage = {
+
+    fighter1: null,
+    fighter2: null,
+    fighter1E: null,
+    fighter2E: null,
+
+    start(fighter1, fighter2, fighter1E, fighter2E){
+
+        this.fighter1 = fighter1,
+        this.fighter2 = fighter2,
+        this.fighter1E = fighter1E,
+        this.fighter2E = fighter2E,
+
+        this.fighter1E.querySelector('.attackButton').addEventListener('click', () => this.doAttack(this.fighter1, this.fighter2)),
+        
+        this.fighter2E.querySelector('.attackButton').addEventListener('click', () => this.doAttack(this.fighter2, this.fighter1))
+
+        this.update();
+    },
+
+    update(){
+        this.fighter1E.querySelector('.name').innerHTML = `${this.fighter1.name} - ${this.fighter1.life.toFixed(1)} HP`;
+        this.fighter2E.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life.toFixed(1)} HP`;
+
+        let f1Pct = (this.fighter1.life / this.fighter1.maxLife) * 100;
+        let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
+
+        this.fighter1E.querySelector('.bar').style.width = `${f1Pct}%`;
+        this.fighter2E.querySelector('.bar').style.width = `${f2Pct}%`;
+    },
+    
+    doAttack(attacking, attacked){
+        console.log(`${attacking.name} está atacando ${attacked.name}`);
+        this.update();
+    }
+}
