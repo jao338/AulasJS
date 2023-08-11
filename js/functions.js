@@ -89,7 +89,7 @@ const stage = {
     doAttack(attacking, attacked){
         
         if(attacking.life <= 0 || attacked.life <= 0){
-            console.log('Alguém ta morto, não pode atacar');
+            log.addMessage('Alguém ta morto, não pode atacar');
             return;
         }
 
@@ -103,12 +103,30 @@ const stage = {
 
             attacked.life -= (actualAttack - actualDefense)
             attacked.life = attacked.life < 0 ? 0 : attacked.life;
-            console.log(`${attacking.name} causou ${(actualAttack - actualDefense).toFixed(1)} em ${attacked.name}`)
+            log.addMessage(`${attacking.name} causou ${(actualAttack - actualDefense).toFixed(1)} em ${attacked.name}`)
 
         }else{
-            console.log(`${attacked.name} consegui defender`)
+            log.addMessage(`${attacked.name} consegui defender`)
         }
         
         this.update();
+    }
+}
+
+const log = {
+    list: [],
+
+    addMessage(msg){
+        this.list.push(msg);
+        this.render();
+    },
+
+    render(){
+        const logE = document.querySelector('.log');
+        logE.innerHTML = '';
+
+        for(let i in this.list){
+            logE.innerHTML += `<li>${this.list[i]}</li>`
+        }
     }
 }
