@@ -1,6 +1,11 @@
-const char = createSorcerer('Ronaldinho Gaúcho');
-const monster = createBigMonster();
+let btn = document.querySelector('#botao')
 
-stage.start(
-    char, monster, document.querySelector('#char'), document.querySelector('#monster')
-)
+btn.addEventListener('click', () => {
+    fetch('https://jsonplaceholder.typicode.com/posts').then((data) =>{
+        return data.json()
+    })
+    .then((data) => {
+        console.log(data)
+    })
+})
+
