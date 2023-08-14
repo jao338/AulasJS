@@ -1,40 +1,61 @@
-let btn = document.querySelector('#botao')
-let ins = document.querySelector('#inserir')
+// https://jsonplaceholder.typicode.com/posts
 
-btn.addEventListener('click', async () => {
+async function readPosts() {
 
-    let response = await fetch('https://jsonplaceholder.typicode.com/posts');
-    let json = await response.json();
-    alert(`O retorno é : ${json[0].title}`);
-    
-    alert('Clicou');
+    let postArea = document.querySelector('.posts');
+    postArea.innerHTML = 'Carregando...'
+
+    let res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    let json = await res.json();
+
+    if (json.length > 0) {
+        postArea.innerHTML = '';
+
+        for (let i in json) {
+            let postHTML = `<div><h1>${json[i].title}</h1>${json[i].body}<hr></div>`
+            postArea.innerHTML += postHTML;
+        }
+
+    } else {
+        postArea.innerHTML = 'Nenhum post para exibir'
+    }
+}
+
+async function addNewPost(title, body) {
+    await fetch('https://jsonplaceholder.typicode.com/posts',
+
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title,
+                body,
+                userId: 2
+            })
+        }
+
+    );
+
+    document.querySelector('#titleField').value = '';
+    document.querySelector('#bodyField').value = '';
+
+    readPosts();
+}
+
+document.querySelector('#insertButton').addEventListener('click', () => {
+
+    let title = document.querySelector('#titleField').value;
+    let body = document.querySelector('#bodyField').value;
+
+    if (title && body) {
+        addNewPost(title, body);
+    } else {
+        alert('Preencha todos os campos')
+    }
 })
 
-ins.addEventListener('click', async () => {
 
-    let response = await fetch('https://jsonplaceholder.typicode.com/posts', 
-    
-    {
-        method: 'POST',    
-        headers: {
-            'Content-Type': 'application/json'           
-         },
+readPosts();
 
-        body: JSON.stringify({
-            title: 'Title',
-            body: 'Body',
-            userId: 2
-        })
-    })
-
-
-    let json = await response.json();
-    console.log(json);
-
-})
-
-/*
-
-    A declaração 'async function' define por regra uma função assíncrona, que retorna um objeto promise. Ao usar a expressão await, define-se uma pausa na execução, esperando a resoluçaõ da promise.
-
-*/
