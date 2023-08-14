@@ -1,8 +1,10 @@
-let n = 10.8787887;
-let text = "25"
+let lista = ["Ovo", "Farinha", "Fermento", "Cascalho"];
 
-let x1 = n.toFixed(2);
-let x2 = n.toString();
-let x3 = parseInt(text);
+let res = lista;
 
-console.log(x2)
+console.log(res.toString())
+console.log(res.join('-'))
+console.log(res.indexOf('Cascalho'))
+console.log(res.pop())
+console.log(res.shift())
+console.log(res.push('Cascalho'))
