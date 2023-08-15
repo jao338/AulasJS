@@ -1,26 +1,12 @@
-let lista = [45, 4, 9, 16, 25];
-let lista2 = [];
-let lista3 = [
-    {id: 1, nome:'Paulo', sobrenome: 'Lacerda'},
-    {id: 2, nome:'Jorge', sobrenome: 'Henrique'},
-    {id: 3, nome:'Fulano', sobrenome: 'Ciclano'}
-];
-let lista4 = [];
+let d = new Date(2022, 3, 11, 12, 30, 0);
+let d2 = new Date('2001-04-11 15:42:17');
+let d3 = new Date(0);
 
-lista2 = lista.findIndex(function (item){
-
-    return (item == 16) ? true : false;
-
-});
-
-lista4 = lista3.find(function(item){
+console.log(d);
+console.log(d2);
+console.log(d3.toUTCString())
+console.log(d.toDateString());
+console.log(d.toUTCString());
 
 
-    return (item.id == 3) ? true : false;
-
-});
-
-console.log(lista);
-console.log(lista2);
-console.log(lista3);
-console.log(lista4);
+//let d = new Date (ano, mês, dia, hora, min, segundos, millisegundos)
