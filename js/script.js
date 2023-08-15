@@ -1,10 +1,10 @@
 let lista = ["Ovo", "Farinha", "Fermento", "Cascalho"];
+let lista2 = ["Prato", "Liquidificador", "Forno"];
 
-let res = lista;
+delete lista[1];
+lista.splice(2, 1);
 
-console.log(res.toString())
-console.log(res.join('-'))
-console.log(res.indexOf('Cascalho'))
-console.log(res.pop())
-console.log(res.shift())
-console.log(res.push('Cascalho'))
+let res = lista.concat(lista2);
+
+console.log(res.sort())
+console.log(res.sort().reverse())
