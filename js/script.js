@@ -1,22 +1,17 @@
 let timer;
 
-function showTime(){
+function rodar(){
 
-    let d = new Date();
-    let h = d.getHours();
-    let m = d.getMinutes();
-    let s = d.getSeconds();
+    timer = setTimeout(() => {
 
-    let txt = `${h}:${m}:${s}`
+        document.querySelector('.demo').innerHTML = 'Rodou!'
 
-    document.querySelector('.demo').innerHTML = txt;
+    }, 2000);
 
-}
-
-function iniciar(){
-    timer = setInterval(showTime, 1000);
 }
 
 function parar(){
-    clearInterval(timer);
+
+    clearTimeout(timer);
+
 }
