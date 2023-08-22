@@ -1,13 +1,19 @@
 let d = new Date();
 
-let data = d.getMilliseconds();
+d.setDate(d.getDate() + 5); // Em dias
+
+let data = d;
 
 console.log(data)
 
-/*
-    d.getTime();
-    d.getDay();
-    d.getMinutes();
-    d.getHours();
-    d.getMilliseconds();
+
+/* 
+
+d.setMonth();
+d.setDate();
+d.setFullYear();
+d.setMinutes();
+d.setHours(d.getHours() + 8);
+
+
 */
