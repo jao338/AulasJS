@@ -1,34 +1,13 @@
-let pessoa = {
-    nome: 'João',
-    sobrenome: 'Henrique',
-    idade: 90,
-    social: {
-        instagram: 'jao338',
-        email: 'joaohenriquerc123@gmail.com'
-    },
+let info = [ 'João Henrique', 'João', 'Henrique', 'jao338'];
 
-    nomeCompleto: function (){
-        return `${this.nome} ${this.sobrenome}`
-    }
-}
+let [nomeCompleto, nome, sobrenome, instagram] = info;
 
-function pessoaNomeCompleto({nome, sobrenome}){
-    return `${nome} ${sobrenome}`
-}
-
-let { email, instagram} = pessoa.social;
-
-console.log(email, instagram)
-console.log(pessoaNomeCompleto(pessoa));
-
+console.log(nomeCompleto, nome, sobrenome, instagram);
 
 /*
 
-    É possível usar também
-    let { nome, idade, social:{instagram:{url:instagram}}} = pessoa;
+    Caso queira não queira pegar algum valor do array sem ter que criar variáveis inutilizáveis, use:
 
-    console.log(nome, idade, instagram);
-
-    Na linha 15, o objeto foi desconstruido nos parâmetros
-
+    let [ nomeCompleto, , , instagram] = info;
+    O código acima define apenas duas novas variáveis ao desconstruir o array
 */
