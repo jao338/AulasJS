@@ -12,17 +12,23 @@ let pessoa = {
     }
 }
 
-let {nome, sobrenome, idade} = pessoa;
+function pessoaNomeCompleto({nome, sobrenome}){
+    return `${nome} ${sobrenome}`
+}
 
-console.log(nome, sobrenome, idade);
-console.log(pessoa.nome, pessoa.sobrenome, pessoa.idade)
+let { email, instagram} = pessoa.social;
+
+console.log(email, instagram)
+console.log(pessoaNomeCompleto(pessoa));
+
 
 /*
 
-    É possível definir um valor padrão para os novos valores usando o sinal de atribuição
-    let {nome, sobrenome, idade = 0} = pessoa
+    É possível usar também
+    let { nome, idade, social:{instagram:{url:instagram}}} = pessoa;
 
-    Também é possível definir um novo nome para os novos valores, usando os dois pontos
-    let {nome:novoNome, sobrenome:novoSobrenome, idade:novoIdade}
+    console.log(nome, idade, instagram);
 
-*/ 
+    Na linha 15, o objeto foi desconstruido nos parâmetros
+
+*/
