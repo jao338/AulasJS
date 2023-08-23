@@ -1,13 +1,15 @@
 let lista = ['ovo', 'cafe', 'arroz', 'feijao', 'macarrao']
-let nome = 'Otorrinolaringologista'
 
+let pessoa = {
+    nome: 'João',
+    sobrenome: 'Henrique',
+    idade: 90
+}
 
-console.log(lista.includes('ovo'));
-console.log(nome.includes('s'))
-console.log('X'.repeat(20))
+console.log(Object.keys(lista));
+console.log(Object.values(lista));
+console.log(Object.entries(lista));
 
-/*
-
-    includes() retorna true caso encontre o valor solicitado, caso contrário retorna false
-
-*/
+console.log(Object.keys(pessoa));
+console.log(Object.values(pessoa));
+console.log(Object.entries(pessoa));
