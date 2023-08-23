@@ -1,37 +1,13 @@
-let num = [1,2,3,4]
-let nomes = ['João', 'Paulo', 'Danilo', 'Diego']
-
-function adicionarNumeros(...numeros){
-
-    
-    let novosNumeros = [
-
-        ...num,
-        ...numeros
-
-    ]
-
-    return novosNumeros;
-
-}
-
-function adicionarNomes(nomes, ...novosNomes){
+let lista = ['ovo', 'cafe', 'arroz', 'feijao', 'macarrao']
+let nome = 'Otorrinolaringologista'
 
 
-    let novoArray = [
-        ...nomes,
-        ...novosNomes
-    ]
-
-    return novoArray;
-
-}
-
-console.log(adicionarNumeros(5,6,7,8,9));
-console.log(adicionarNomes(nomes, 'Wendell', 'Michel', 'Vitor', 'Ivan'));
+console.log(lista.includes('ovo'));
+console.log(nome.includes('s'))
+console.log('X'.repeat(20))
 
 /*
 
-O operador'Rest' permite que você passe uma quantidade indefinida valores a uma função
+    includes() retorna true caso encontre o valor solicitado, caso contrário retorna false
 
 */
